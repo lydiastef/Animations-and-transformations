@@ -1,0 +1,373 @@
+body {
+    background: #000;
+}
+
+/*Square box at the top*/
+#animated_div {
+    width: 200px;
+    height: 100px;
+    background: red;
+    color: beige;
+    position: relative;
+    font-weight: bold;
+    font-size: 40px;
+    padding: 50px;
+    padding-top: 80px;
+    -webkit-animation: animated_div 5s 1;
+    border-radius: 5px;
+    animation-iteration-count: infinite; /*Never stops moving*/
+    margin-top: 50px;
+    margin-left: 35%;
+
+}
+
+@keyframes animated_div {
+    0% {
+        transform: rotate(0deg);
+        left: 0px;
+    }
+
+    25% {
+        transform: rotate(20deg);
+        left: 0px;
+    }
+
+    50% {
+        transform: rotate(0deg);
+        left: 500px;
+    }
+
+    55% {
+        transform: (0deg);
+        left: 500px;
+    }
+
+    70% {
+        transform: rotate(0deg);
+        left: 500px;
+        background: green;
+    }
+
+    100% {
+        transform: rotate(-360deg);
+        left: 0px;
+    }
+
+}
+
+h1 {
+    font-size: 64px;
+    color: #002bff;
+    text-align: center;
+    margin-top: 140px;
+    margin-bottom: 100px;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 .soon {
+    color: yellow;
+    animation: blink 1s linear infinite;
+    font-size: 96px;
+    margin-bottom: 100px;
+}
+
+@keyframes blink{
+    0%{opacity: 0;}
+    50%{opacity: .5;}
+    100%{opacity: 1;}
+    }
+
+/*The two buttons*/
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    margin-top: -300px;
+}
+
+.btn-1 {
+    width: 300px;
+    height: 100px;
+    border: none;
+    color: white;
+    background-color: blue;
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 0 yellow;
+    transition: ease-out 0.3s;
+    font-size: 2rem;
+    outline: none;
+}
+
+.btn-1:hover {
+    box-shadow: inset 300px 0 0 0 yellow;
+    cursor: pointer;
+    color: #000000;
+    -webkit-transform: translateY(-30px);
+	transform: translateY(-30px);
+}
+
+.btn-2 {
+    width: 300px;
+    height: 100px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    transition: ease-out 0.3s;
+    font-size: 2rem;
+    outline: none;
+    border: 3px solid purple;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-2:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.btn-2:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.btn-2:hover:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    z-index: -1;
+}
+
+.btn-2:active {
+    color: #000
+}
+
+.btn-2:active:after {
+    background: transparent;
+}
+
+.btn-2:hover:before {
+    opacity: 1;
+}
+
+.btn-2:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes btn-1 {
+    0% {top: 200px;}
+    25% {}
+}
+
+@keyframes btn-2 {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+/*The "Try Me" squares*/
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 200px;
+}
+
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 100px;
+}
+
+a span {
+    padding: 15px;
+    transition: .5s;
+    position: relative;
+}
+
+a span:nth-child(1) {
+    color: #fff;
+    background: #262626;
+}
+
+a span:nth-child(2) {
+    color: #fff;
+    background: #ff3636;
+}
+
+a span:nth-child(1):before {
+    content: attr(data-attr);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ff3636;
+    padding: 15px;
+    transition: .5S;
+    transform-origin: top;
+    transform: rotateX(90deg) translateY(-50%);
+}
+
+a:hover span:nth-child(1):before {
+    transform: rotateX(0deg) translateY(0%);
+} 
+
+a span:nth-child(2):before {
+    content: attr(data-attr);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #262626;
+    padding: 15px;
+    transition: 0.5S;
+    transform-origin: bottom;
+    transform: rotateX(90deg) translateY(50%);
+}
+
+a:hover span:nth-child(2):before {
+    transform: rotateX(0deg) translateY(0%);
+} 
+
+a  span:nth-child(1):after {
+  content: attr(data-attr);
+  padding: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #262626;
+  transform-origin: bottom;
+  transform: rotateX(0deg) translateY(0%);
+  transition: 0.5s;
+}
+
+a:hover span:nth-child(1):after {
+  transform: rotateX(90deg) translateY(50%);
+}
+
+a span:nth-child(2):after {
+    content: attr(data-attr);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ff3636;
+    padding: 15px;
+    transition: 0.5S;
+    transform-origin: top;
+    transform: rotateX(0deg) translateY(0%);
+}
+
+a:hover span:nth-child(2):after {
+    transform: rotateX(90deg) translateY(-50%);
+} 
+
+
+/*The dots at the bottom*/
+.container2 {
+    width: 100px;
+    height: 50px;
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    position: relative;
+    margin-bottom: 500px;
+    margin: auto;
+    border-radius: 50%;
+    display: flex;
+    animation-timing-function: ease-in-out;
+    justify-content: center;
+
+  }
+  
+  .div1 {
+    width: 100px;
+    height: 50px;
+    border-radius: 50%;
+    animation-timing-function: linear;
+    background: #002bff;
+    padding: 40px;
+    margin: 10px;
+    animation: bounce-in-right 2s ease infinite;
+}
+
+  .div2 {
+    width: 100px;
+    height: 50px;
+    border-radius: 50%;
+    animation-timing-function: ease;
+    background: #48ff00;
+    padding: 40px;
+    margin: 10px;
+}
+
+  .div3 {
+    width: 100px;
+    height: 50px;
+    border-radius: 50%;
+    animation-timing-function: ease-in; 
+    background-color: #ff00c8;  
+    padding: 40px;
+    margin: 10px;
+}
+
+  .div4 {
+    width: 100px;
+    height: 50px;
+    border-radius: 50%;
+    animation-timing-function: ease-out;
+    background-color: #ff7300;
+    padding: 40px;
+    margin: 10px;
+}
+
+  .div5 {
+    width: 100px;
+    height: 50px;
+    border-radius: 50%;
+    animation-timing-function: ease-in-out;
+    background-color: blueviolet;
+    padding: 40px;
+    margin: 10px;
+}
+
+@keyframes bounce-in-right {
+    0% {
+      opacity: 0;
+      transform: translateX(2000px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateX(-30px);
+    }
+    80% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+  }
+ 
+  
+  @keyframes mymove {
+    from {right: 0px;}
+    to {left: 300px;}
+  }
