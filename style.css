@@ -13,14 +13,15 @@ body {
     font-size: 40px;
     padding: 50px;
     padding-top: 80px;
-    -webkit-animation: animated_div 5s 1;
     border-radius: 5px;
+    -webkit-animation: animated_div 5s 1;
     animation-iteration-count: infinite; /*Never stops moving*/
     margin-top: 50px;
     margin-left: 35%;
 
 }
 
+/*Rotating transformation of the square*/
 @keyframes animated_div {
     0% {
         transform: rotate(0deg);
@@ -55,6 +56,7 @@ body {
 
 }
 
+/*The "toy store" text*/
 h1 {
     font-size: 64px;
     color: #002bff;
@@ -72,11 +74,111 @@ h1 .soon {
     margin-bottom: 100px;
 }
 
+/*The blinking feature of the word "soon"*/
 @keyframes blink{
     0%{opacity: 0;}
     50%{opacity: .5;}
     100%{opacity: 1;}
     }
+
+
+/*The "Try Me" squares*/
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 200px;
+    transform: translate(-50%, -50%); /*positioning of the squares*/
+
+}
+
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 100px;
+}
+
+a span {
+    padding: 15px;
+    transition: .5s;
+    position: relative;
+}
+
+a span:nth-child(1) {
+    color: #fff;
+    background: #262626;
+}
+
+a span:nth-child(2) {
+    color: #fff;
+    background: #ff3636;
+}
+
+a span:nth-child(1):before {
+    content: attr(data-attr);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ff3636;
+    padding: 15px;
+    transition: .5S;
+    transform-origin: top;
+    transform: rotateX(90deg) translateY(-50%);
+}
+
+a:hover span:nth-child(1):before {
+    transform: rotateX(0deg) translateY(0%);
+} 
+
+a span:nth-child(2):before {
+    content: attr(data-attr);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #262626;
+    padding: 15px;
+    transition: 0.5S;
+    transform-origin: bottom;
+    transform: rotateX(90deg) translateY(50%);
+}
+
+a:hover span:nth-child(2):before {
+    transform: rotateX(0deg) translateY(0%);
+} 
+
+a  span:nth-child(1):after {
+  content: attr(data-attr);
+  padding: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #262626;
+  transform-origin: bottom;
+  transform: rotateX(0deg) translateY(0%);
+  transition: 0.5s;
+}
+
+a:hover span:nth-child(1):after {
+  transform: rotateX(90deg) translateY(50%);
+}
+
+a span:nth-child(2):after {
+    content: attr(data-attr);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ff3636;
+    padding: 15px;
+    transition: 0.5S;
+    transform-origin: top;
+    transform: rotateX(0deg) translateY(0%);
+}
+
+a:hover span:nth-child(2):after {
+    transform: rotateX(90deg) translateY(-50%);
+} 
+
+
 
 /*The two buttons*/
 .container {
@@ -189,101 +291,6 @@ h1 .soon {
     100% { background-position: 0 0; }
 }
 
-/*The "Try Me" squares*/
-.center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin-top: 200px;
-}
-
-a {
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 100px;
-}
-
-a span {
-    padding: 15px;
-    transition: .5s;
-    position: relative;
-}
-
-a span:nth-child(1) {
-    color: #fff;
-    background: #262626;
-}
-
-a span:nth-child(2) {
-    color: #fff;
-    background: #ff3636;
-}
-
-a span:nth-child(1):before {
-    content: attr(data-attr);
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: #ff3636;
-    padding: 15px;
-    transition: .5S;
-    transform-origin: top;
-    transform: rotateX(90deg) translateY(-50%);
-}
-
-a:hover span:nth-child(1):before {
-    transform: rotateX(0deg) translateY(0%);
-} 
-
-a span:nth-child(2):before {
-    content: attr(data-attr);
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: #262626;
-    padding: 15px;
-    transition: 0.5S;
-    transform-origin: bottom;
-    transform: rotateX(90deg) translateY(50%);
-}
-
-a:hover span:nth-child(2):before {
-    transform: rotateX(0deg) translateY(0%);
-} 
-
-a  span:nth-child(1):after {
-  content: attr(data-attr);
-  padding: 15px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: #262626;
-  transform-origin: bottom;
-  transform: rotateX(0deg) translateY(0%);
-  transition: 0.5s;
-}
-
-a:hover span:nth-child(1):after {
-  transform: rotateX(90deg) translateY(50%);
-}
-
-a span:nth-child(2):after {
-    content: attr(data-attr);
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: #ff3636;
-    padding: 15px;
-    transition: 0.5S;
-    transform-origin: top;
-    transform: rotateX(0deg) translateY(0%);
-}
-
-a:hover span:nth-child(2):after {
-    transform: rotateX(90deg) translateY(-50%);
-} 
-
 
 /*The dots at the bottom*/
 .container2 {
@@ -317,7 +324,6 @@ a:hover span:nth-child(2):after {
     width: 100px;
     height: 50px;
     border-radius: 50%;
-    animation-timing-function: ease;
     background: #48ff00;
     padding: 40px;
     margin: 10px;
@@ -327,7 +333,6 @@ a:hover span:nth-child(2):after {
     width: 100px;
     height: 50px;
     border-radius: 50%;
-    animation-timing-function: ease-in; 
     background-color: #ff00c8;  
     padding: 40px;
     margin: 10px;
@@ -337,7 +342,6 @@ a:hover span:nth-child(2):after {
     width: 100px;
     height: 50px;
     border-radius: 50%;
-    animation-timing-function: ease-out;
     background-color: #ff7300;
     padding: 40px;
     margin: 10px;
@@ -347,7 +351,6 @@ a:hover span:nth-child(2):after {
     width: 100px;
     height: 50px;
     border-radius: 50%;
-    animation-timing-function: ease-in-out;
     background-color: blueviolet;
     padding: 40px;
     margin: 10px;
@@ -356,7 +359,7 @@ a:hover span:nth-child(2):after {
 @keyframes bounce-in-right {
     0% {
       opacity: 0;
-      transform: translateX(2000px);
+      transform: translateX(2000px); /*translateX means the element translates along the X axis (horizontally)*/
     }
     60% {
       opacity: 1;
@@ -368,6 +371,6 @@ a:hover span:nth-child(2):after {
  
   
   @keyframes mymove {
-    from {right: 0px;}
+    from {right: 0px;} /*The dot comes in from the right*/
     to {left: 300px;}
   }
