@@ -4,15 +4,15 @@ body {
 
 /*Square box at the top*/
 #animated_div {
-    width: 200px;
-    height: 100px;
+    width: 70px;
+    height: 25px;
     background: red;
     color: beige;
     position: relative;
     font-weight: bold;
-    font-size: 40px;
-    padding: 50px;
-    padding-top: 80px;
+    font-size: 28px;
+    padding: 40px;
+    padding-bottom: 80px;
     border-radius: 5px;
     -webkit-animation: animated_div 5s 1;
     animation-iteration-count: infinite; /*Never stops moving*/
@@ -58,11 +58,11 @@ body {
 
 /*The "toy store" text*/
 h1 {
-    font-size: 64px;
+    font-size: 40px;
     color: #002bff;
     text-align: center;
-    margin-top: 140px;
-    margin-bottom: 100px;
+    margin-top: 40px;
+    margin-bottom: 30px;
     text-transform: uppercase;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -70,8 +70,8 @@ h1 {
 h1 .soon {
     color: yellow;
     animation: blink 1s linear infinite;
-    font-size: 96px;
-    margin-bottom: 100px;
+    font-size: 64px;
+    margin-bottom: 30px;
 }
 
 /*The blinking feature of the word "soon"*/
@@ -87,14 +87,14 @@ h1 .soon {
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: 200px;
+    margin-top: 280px;
     transform: translate(-50%, -50%); /*positioning of the squares*/
 }
 
 a {
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 100px;
+    font-size: 50px;
 }
 
 a span {
@@ -190,19 +190,19 @@ a span:nth-child(2):after {
     align-items: center;
     text-align: center;
     min-height: 100vh;
-    margin-top: -300px;
+    margin-top: -250px;
 }
 
 .btn-1 {
-    width: 300px;
-    height: 100px;
+    width: 180px;
+    height: 70px;
     border: none;
     color: white;
     background-color: blue;
     border-radius: 4px;
     box-shadow: inset 0 0 0 0 yellow;
     transition: ease-out 0.3s;
-    font-size: 2rem;
+    font-size: 1rem;
     outline: none;
 }
 
@@ -215,13 +215,13 @@ a span:nth-child(2):after {
 }
 
 .btn-2 {
-    width: 300px;
-    height: 100px;
+    width: 180px;
+    height: 70px;
     border: none;
     color: white;
     border-radius: 4px;
     transition: ease-out 0.3s;
-    font-size: 2rem;
+    font-size: 1rem;
     outline: none;
     border: 3px solid purple;
     position: relative;
@@ -282,27 +282,15 @@ a span:nth-child(2):after {
     border-radius: 10px;
 }
 
-@keyframes btn-1 {
-    0% {top: 200px;}
-    25% {}
-}
-
-@keyframes btn-2 {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
-}
-
 
 /*The dots at the bottom*/
 .container2 {
-    width: 100px;
-    height: 50px;
+    width: 90px;
+    height: 45px;
     color: white;
     font-size: 48px;
     font-weight: bold;
     position: relative;
-    margin-bottom: 500px;
     margin: auto;
     border-radius: 50%;
     display: flex;
@@ -312,12 +300,12 @@ a span:nth-child(2):after {
   }
   
   .div1 {
-    width: 100px;
-    height: 50px;
+    width: 90px;
+    height: 45px;
     border-radius: 50%;
     animation-timing-function: linear;
     background: #002bff;
-    padding: 40px;
+    padding: 30px;
     margin: 10px;
     animation: bounce-in-right 2s ease infinite;
 }
@@ -327,34 +315,34 @@ a span:nth-child(2):after {
     height: 50px;
     border-radius: 50%;
     background: #48ff00;
-    padding: 40px;
+    padding: 30px;
     margin: 10px;
 }
 
   .div3 {
-    width: 100px;
-    height: 50px;
+    width: 90px;
+    height: 45px;
     border-radius: 50%;
     background-color: #ff00c8;  
-    padding: 40px;
+    padding: 30px;
     margin: 10px;
 }
 
   .div4 {
-    width: 100px;
-    height: 50px;
+    width: 90px;
+    height: 45px;
     border-radius: 50%;
     background-color: #ff7300;
-    padding: 40px;
+    padding: 30px;
     margin: 10px;
 }
 
   .div5 {
-    width: 100px;
-    height: 50px;
+    width: 90px;
+    height: 45px;
     border-radius: 50%;
     background-color: blueviolet;
-    padding: 40px;
+    padding: 30px;
     margin: 10px;
 }
 
